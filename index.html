@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz | Rejestracja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script type="text/javascript" src="script.js"></script>
+
+<body>
+
+    <div id='all'>
+        <h1>Formularz</h1>
+        <hr style="margin-bottom: 20px;">
+        <form onsubmit="pageRender()">
+
+            
+            <label for="name">Podaj imię*: </label>
+            <input type="text" name="name" id="name" pattern="[A-ZŻŹĆŃĄŚŁĘÓ][a-zżźćńąśłęó]+" placeholder="Bartosz" oninput="giveName()" required>
+            <br>
+            <label for="surname">Podaj nazwisko*: </label>
+            <input type="text" name="surname" id="surname" pattern="[A-ZŻŹĆŃĄŚŁĘÓ][a-zżźćńąśłęó]+" placeholder="Bohdziewicz" oninput="giveSurname()" required>
+            
+            <br>
+            <label for="age">Podaj twój wiek:</label>
+            <input type="number" name="age" id="age" min="0" step="1" max="150" placeholder="18" oninput="giveAge()">
+            <br>
+            <label for="street">Podaj adres ulicy*: </label>
+            <input type="text" name="street" id="street" placeholder="Staszica" pattern="[A-ZŻŹĆŃĄŚŁĘÓ][a-zżźćńąśłęó]+"  oninput="giveStreet()" required>
+            <br>
+            <label for="number">Podaj numer domu*: </label>
+            <input type="number" name="number" id="number" min="1" placeholder="341" oninput="giveNumber()" required>
+            <br>
+            <label for="ZIP">Podaj kod pocztowy*: </label>
+            <input type="text" name="ZIP" id="ZIP" pattern="[0-9]{2}-[0-9]{3}" placeholder="12-123" oninput="giveZIP()" required>
+            <br>
+            <label for="place">Podaj miejscowość*: </label>
+            <input type="text" name="place" id="place" pattern="[A-ZŻŹĆŃĄŚŁĘÓ][a-zżźćńąśłęó]+" placeholder="Świecie" oninput="givePlace()" required>
+            <br>
+            <label for="email">Podaj e-mail: </label>
+            <input type="email" name="email" id="email" placeholder="Bartosz_Bohdziewicz@BB.pl" oninput="giveEmail()">
+            <br>
+            <label for="phone">Podaj numer telefonu: </label>
+            <input type="text" name="phone" id="phone" pattern="[1-9][0-9]{8}" placeholder="123123123" oninput="givePhone()">
+            <br>
+            <label for="time">Preferowana godzina: </label>
+            <span>
+                <input type="number" name="time" id="hour" min="8" max="16" placeholder="00" oninput='giveHour(), disableMinutes()' required> : 
+                <input type="number" name="time" id="n_minutes" min="0" max="59" step="15" placeholder="00" oninput='giveN_minutes(), changeTimeForRange(), minutesEqualizer()' required>
+                <input type="range" name="time" id="r_minutes" min="0" max="59" step="15" value="0" oninput="giveR_minutes(), changeTimeForNumber()">
+            </span>
+            <br>
+            <label for="NFZ">Ubezpieczenie: </label>
+            <select name="NFZ" id="NFZ">
+                <option value="1">NFZ</option>
+                <option value="0">brak</option>
+            </select>
+            <br>
+            <label for="date">Preferowana data wizyty: </label>
+            <input type="date" name="date" id="date" onfocus="actualDate()" oninput="giveDate()" data-date-format="YYYY-MM-DD">
+            <br>
+            <label for="symptoms">Objawy chorobowe: </label>
+            <div id='symptoms'>
+                <div id="left-side">
+                    <input type="checkbox" name="symptoms" id="hight_temp" value = "wysoka temperatura" oninput='giveSymptoms("hight_temp",0)'> wysoka temperatura <br>
+                    <input type="checkbox" name="symptoms" id="rhinitis" value = "katar" oninput='giveSymptoms("rhinitis",1)'> katar<br>
+                    <input type="checkbox" name="symptoms" id="sore_throat" value = "ból gardła" oninput='giveSymptoms("sore_throat",2)'> ból gardła<br>
+                </div>
+                <div id="right-side">
+                    <input type="checkbox" name="symptoms" id="cough" value = "kaszel" oninput='giveSymptoms("cough",3)'> kaszel<br>
+                    <input type="checkbox" name="symptoms" id="headache" value = "ból głowy" oninput='giveSymptoms("headache",4)'> ból głowy<br>
+                    <input type="checkbox" name="symptoms" id="other" onclick="enableTextarea()"> inne<br>
+                </div>
+            
+                <textarea name="symptoms" id="other_info" placeholder="nie plai trzeci gar ;)" oninput="giveTextAreaContent()"></textarea>
+            </div>
+            <br>
+            <input type="submit" value="Zatwierdź" >
+
+        </form>
+    </div>
+</body>
+</html>

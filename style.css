@@ -1,0 +1,99 @@
+body{
+    background-color: #e9dac6;
+    margin: 15px;
+}
+
+input, select{
+    width: 160px;
+    padding: 10px 5px 10px 10px;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: none;
+}  
+
+input[type='text']{
+    width: 100px;
+}
+
+input[type='number']{
+    width: 30px;
+}
+
+input[type='range']{
+    padding: 0;
+    margin: 20px 5px;
+    width: 100px;
+}
+
+input[type='checkbox']{
+    width: 20px;
+}
+
+input[type='submit']{
+    cursor: pointer;
+    background-color: #e5ffcd;
+}
+
+#hour{
+    text-align: right;
+}
+
+textarea{
+    display: none;
+    width: 100%;
+}
+
+#all{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#customerInfo{
+    text-align: right;
+}
+
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+    
+}
+
+tr,td{
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+#paperSheet{
+    width: 21cm;
+    height: 29.7cm;
+    margin: auto;
+    background-color: white;
+    padding: 2.5cm 3.5cm;
+    box-shadow: 5px 5px 5px 5px rgba(245, 245, 245, 0.116);
+    font-size: 16px;
+}
+
+#left-side{
+    float: left;
+}
+
+#right-side{
+    float: right;
+}
+
+#left-side, #right-side{
+    text-align: left;
+    width: 50%;
+}
+
+#symptoms{
+    margin: 0 auto 0 auto;
+    width: 60%;
+}
